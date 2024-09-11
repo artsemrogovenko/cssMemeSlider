@@ -1,0 +1,47 @@
+[
+    {
+      "img": "meme1.jpg",
+      "description": "А чё так можно было, что ли?!",
+      "bgcolor": "#000"
+    },
+    {
+      "img": "meme2.jpg",
+      "description": "Очки виртуальной реальности",
+      "bgcolor": "#000"
+    },
+    {
+      "img": "meme3.jpg",
+      "description": "Каким файлообменником ты пользуешься?",
+      "bgcolor": "#000"
+    },
+    {
+      "img": "meme4.jpg",
+      "description": "Так было с каждым",
+      "bgcolor": "#CC9966"
+    },
+    {
+      "img": "meme5.jpg",
+      "description": "Ну теперь стало понятней",
+      "bgcolor": "#FFF"
+    },
+    {
+      "img": "meme6.jpg",
+      "description": "бам бам бам #$&%",
+      "bgcolor": "#333"
+    },
+    {
+      "img": "meme7.jpg",
+      "description": "ТБ никто не отменял",
+      "bgcolor": "#333"
+    },
+    {
+      "img": "meme8.jpg",
+      "description": "Один из сложных выборов",
+      "bgcolor": "#fff"
+    },
+    {
+      "img": "meme9.jpg",
+      "description": "откуда Coldplay взял за идею)",
+      "bgcolor": "#333"
+    }
+]
