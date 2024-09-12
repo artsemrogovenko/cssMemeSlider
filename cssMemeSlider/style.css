@@ -1,3 +1,7 @@
+:root {
+    --slider-bg-color: rgb(82, 35, 35);
+}
+
 html {
     width: 100%;
     min-width: 320px;
@@ -24,7 +28,7 @@ body {
 
 .slider {
     margin-bottom: 20px;
-    background-color: rgb(82, 35, 35);
+    background-color: var(--slider-bg-color);
     width: 100%;
     max-width: 1280px;
     height: 700px;
@@ -54,7 +58,7 @@ img {
 }
 
 .controls {
-    height: 40px;
+    /* height: 40px; */
     display: flex;
     flex-direction: row;
 }
@@ -72,9 +76,11 @@ img {
     width: 15px;
     height: 15px;
     border-radius: 50%;
+    margin-bottom: 15px;
+
 }
 
-.control:hover {
+.control.hover {
     background: #fff;
 }
 
@@ -84,6 +90,12 @@ img {
     width: 13px;
     height: 13px;
 }
+
+.control_active.hover {
+    border: 2px solid #fff;
+    background: none;
+}
+
 
 .caption {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
