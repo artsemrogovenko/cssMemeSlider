@@ -1,0 +1,114 @@
+html {
+    width: 100%;
+    min-width: 320px;
+}
+
+body {
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    background: #222;
+    justify-content: center;
+}
+
+.container {
+    /* margin: 35px; */
+    max-width: 1280px;
+    padding: 22px;
+    background: #222;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+}
+
+.slider {
+    margin-bottom: 20px;
+    background-color: rgb(82, 35, 35);
+    width: 100%;
+    max-width: 1280px;
+    height: 700px;
+    overflow: hidden;
+    display: flex;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+img {
+    max-height: 700px;
+    max-width: 100%;
+    height: auto;
+}
+
+.expand_narrow {
+    height: 100%;
+}
+
+.addition {
+    width: 100%;
+    display: flex;
+    align-items: baseline;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+}
+
+.controls {
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+}
+
+.control_area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25px;
+    height: 25px;
+}
+
+.control {
+    background: rgb(0, 179, 255);
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+}
+
+.control:hover {
+    background: #fff;
+}
+
+.control_active {
+    background: none;
+    border: 2px solid rgb(0, 179, 255);
+    width: 13px;
+    height: 13px;
+}
+
+.caption {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: medium;
+    color: #fff;
+    margin-right: 100px;
+}
+
+@media screen and (max-width: 580px) {
+    .slider {
+        height: 500px;
+    }
+
+    .addition {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .caption {
+        margin-right: 0px;
+    }
+
+    img {
+        max-height: 500px;
+    }
+}
