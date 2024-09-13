@@ -1,5 +1,6 @@
 :root {
     --slider-bg-color: rgb(82, 35, 35);
+    --offset:0;
 }
 
 html {
@@ -24,6 +25,7 @@ body {
     width: 100%;
     flex-direction: column;
     align-items: center;
+    overflow-x: hidden;
 }
 
 .slider {
@@ -35,14 +37,20 @@ body {
     overflow: hidden;
     display: flex;
     border-radius: 10px;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
+    transition: background-color 2s;
 }
 
 img {
     max-height: 700px;
     max-width: 100%;
-    height: auto;
+    /* height: auto; */
+    /* width: auto; */
+    height: 100%;
+    object-fit: contain;
+    transition: transform 1s;
+    transform: translateX(var(--offset));
 }
 
 .expand_narrow {
@@ -96,12 +104,18 @@ img {
     background: none;
 }
 
+.control:hover,
+.control_area:hover {
+    cursor: pointer;
+}
 
 .caption {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: medium;
     color: #fff;
     margin-right: 100px;
+    transition: opacity 0.5s ease;
+    opacity: 1;
 }
 
 @media screen and (max-width: 580px) {
@@ -123,4 +137,8 @@ img {
     img {
         max-height: 500px;
     }
+}
+
+.hidden{
+    display: none;
 }
