@@ -94,6 +94,7 @@ function drawAllcards(){
     }
     if(!drawed){
         caption.textContent =  slidesData[0]['description'];
+        document.documentElement.style.setProperty('--slider-bg-color', slidesData[0]['bgcolor']);
         selectors[0].classList.add('control_active');
     }
     drawed=true;
