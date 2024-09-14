@@ -1,11 +1,13 @@
 :root {
     --slider-bg-color: rgb(82, 35, 35);
-    --offset:0;
+    --offset: 0;
+    --my-delay: 1s;
 }
 
 html {
     width: 100%;
     min-width: 320px;
+    max-height: 100%;
 }
 
 body {
@@ -49,7 +51,7 @@ img {
     /* width: auto; */
     height: 100%;
     object-fit: contain;
-    transition: transform 1s;
+    transition: transform var(--my-delay);
     transform: translateX(var(--offset));
 }
 
@@ -139,6 +141,6 @@ img {
     }
 }
 
-.hidden{
+.hidden {
     display: none;
 }

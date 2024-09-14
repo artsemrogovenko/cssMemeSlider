@@ -2,7 +2,7 @@ const slider = document.querySelector('.slider');
 const controls = document.querySelector('.controls');
 const caption = document.querySelector('.caption');
 let slider_width = slider.getBoundingClientRect().width; // ширина слайдера
-let drawed = false
+let drawed = false;
 let root = document.documentElement;
 let currentSlide = 0;
 let slidesData = [];
@@ -25,19 +25,45 @@ function parseData() {
 }
 window.onload = parseData;
 
+let mouseInBrowser = true;
+// Для отслеживания выхода за рамки
+document.addEventListener('mousemove', (event) => {
+    const borderThreshold = 3; // расстояние в пикселях от границы браузера
+
+    const isLeft = event.clientX < borderThreshold;
+    const isRight = (window.innerWidth - event.clientX) < borderThreshold;
+
+    if ( isLeft || isRight) {
+        console.log('указатель выходит за рамку браузера');
+        mouseInBrowser=false;
+    }else{
+        mouseInBrowser=true;
+    }
+});
+
 let resizeTimeout;
 
 window.addEventListener('resize', () => {
-    clearTimeout(resizeTimeout);
-    resizeTimeout = setTimeout(() => {
-        slider_width = slider.getBoundingClientRect().width;
-        if (drawed) {
+    slider_width = slider.getBoundingClientRect().width;
+    if (drawed) {
+        root.style.setProperty('--offset', `-${slider_width * (currentSlide)}px`);
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(() => {
+
+            root.style.setProperty('--my-delay', '0s');
+
             const images = document.querySelectorAll('img');
             images.forEach((image) => {
                 updateStyle(image);
             });
+
+        }, 50);
+        if (mouseInBrowser) {
+            setTimeout(() => {
+                root.style.setProperty('--my-delay', '1s');
+            }, 1000);
         }
-    }, 50); 
+    }
 });
 const selectors = document.querySelectorAll('.control');
 
@@ -66,11 +92,12 @@ function initialize() {
                 selector.classList.remove('control_active');
             });
             const id = element.id;
-            const mem = slidesData[id - 1];
+            currentSlide = id - 1;
+            const mem = slidesData[currentSlide];
             const round = element.querySelector('.control');
             round.classList.add('control_active');
             // slider.innerHTML = `<img src="../cssMemeSlider/assets/${slidesData[id - 1]['img']}" alt="img"></img>`;
-            root.style.setProperty('--offset',`-${slider_width*(id-1)}px`);
+            root.style.setProperty('--offset',`-${slider_width*(currentSlide)}px`);
             root.style.setProperty('--slider-bg-color', mem['bgcolor']);
             caption.style.opacity='0';
             setTimeout(() => {
