@@ -6,7 +6,7 @@
 
 html {
     width: 100%;
-    min-width: 320px;
+    min-width: 20em;
     max-height: 100%;
 }
 
@@ -19,9 +19,8 @@ body {
 }
 
 .container {
-    /* margin: 35px; */
-    max-width: 1280px;
-    padding: 22px;
+    max-width: 80em;
+    padding: 2.2%;
     background: #222;
     display: flex;
     width: 100%;
@@ -31,21 +30,21 @@ body {
 }
 
 .slider {
-    margin-bottom: 20px;
+    margin-bottom: 2em;
     background-color: var(--slider-bg-color);
     width: 100%;
-    max-width: 1280px;
-    height: 700px;
+    max-width: 80em;
+    height: 45em;
     overflow: hidden;
     display: flex;
-    border-radius: 10px;
+    border-radius: 1em;
     justify-content: flex-start;
     align-items: center;
     transition: background-color 2s;
 }
 
 img {
-    max-height: 700px;
+    max-height:  45em;
     max-width: 100%;
     /* height: auto; */
     /* width: auto; */
@@ -73,7 +72,6 @@ img {
 }
 
 .controls {
-    /* height: 40px; */
     display: flex;
     flex-direction: row;
 }
@@ -82,16 +80,16 @@ img {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 25px;
-    height: 25px;
+    width: 1.5625em;
+    height: 1.5625em;
 }
 
 .control {
     background: rgb(0, 179, 255);
-    width: 15px;
-    height: 15px;
+    width:  0.9375em;
+    height:  0.9375em;
     border-radius: 50%;
-    margin-bottom: 15px;
+    margin-bottom:  0.9375em;
 
 }
 
@@ -101,13 +99,13 @@ img {
 
 .control_active {
     background: none;
-    border: 2px solid rgb(0, 179, 255);
-    width: 13px;
-    height: 13px;
+    border:  0.125em solid rgb(0, 179, 255);
+    width: 0.8125em;
+    height: 0.8125em;
 }
 
 .control_active.hover {
-    border: 2px solid #fff;
+    border:  0.125em solid #fff;
     background: none;
 }
 
@@ -120,7 +118,6 @@ img {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: medium;
     color: #fff;
-    /* margin-right: 100px; */
     transition:   opacity 1s, visibility 1s   ;
     opacity: 0;
     visibility: hidden; 
@@ -135,7 +132,7 @@ img {
 
 @media screen and (max-width: 580px) {
     .slider {
-        height: 500px;
+        height: 31.25em;
     }
 
     .addition {
@@ -146,13 +143,13 @@ img {
     }
 
     .caption {
-        /* margin-right: 0px; */
         display: flex;
         justify-content: center;
+        text-align: center;
     }
 
     img {
-        max-height: 500px;
+        max-height: 31.25em;
     }
 }
 
@@ -200,6 +197,19 @@ input[type="radio"] {
     background: rgb(255, 255, 255);
 }
 
+/* pressed*/
+#mem1:hover:active~.addition .controls .control.c1,
+#mem2:hover:active~.addition .controls .control.c2,
+#mem3:hover:active~.addition .controls .control.c3,
+#mem4:hover:active~.addition .controls .control.c4,
+#mem5:hover:active~.addition .controls .control.c5,
+#mem6:hover:active~.addition .controls .control.c6,
+#mem7:hover:active~.addition .controls .control.c7,
+#mem8:hover:active~.addition .controls .control.c8,
+#mem9:hover:active~.addition .controls .control.c9 {
+    background: rgb(49, 136, 158);
+}
+
 /* active */
 #mem1:checked~.addition .control.c1,
 #mem2:checked~.addition .control.c2,
@@ -211,9 +221,9 @@ input[type="radio"] {
 #mem8:checked~.addition .control.c8,
 #mem9:checked~.addition .control.c9 {
     background: none;
-    border: 2px solid rgb(0, 179, 255);
-    width: 13px;
-    height: 13px;
+    border:  0.125em solid rgb(0, 179, 255);
+    width: 0.8125em;
+    height: 0.8125em;
 }
 
 /* active hovered */
@@ -226,7 +236,7 @@ input[type="radio"] {
 #mem7:checked:hover~.addition .control.c7,
 #mem8:checked:hover~.addition .control.c8,
 #mem9:checked:hover~.addition .control.c9 {
-    border: 2px solid #fff;
+    border: 0.125em solid #fff;
     background: none;
 }
 
