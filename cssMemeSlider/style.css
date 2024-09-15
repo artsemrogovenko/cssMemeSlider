@@ -1,6 +1,6 @@
 :root {
-    --slider-bg-color: rgb(82, 35, 35);
-    --offset: 0;
+    --slider-bg-color: rgb(0, 0, 0);
+    --offset: 0%;
     --my-delay: 1s;
 }
 
@@ -54,6 +54,11 @@ img {
     transition: transform var(--my-delay);
     transform: translateX(var(--offset));
 }
+
+.slider img {
+    width: 100%; 
+    flex: 0 0 100%;
+  }
 
 .expand_narrow {
     height: 100%;
@@ -115,9 +120,17 @@ img {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: medium;
     color: #fff;
-    margin-right: 100px;
-    transition: opacity 0.5s ease;
-    opacity: 1;
+    /* margin-right: 100px; */
+    transition:   opacity 1s, visibility 1s   ;
+    opacity: 0;
+    visibility: hidden; 
+}
+
+
+.captions {
+    display: flex;
+    width: 100%;
+    overflow: hidden;
 }
 
 @media screen and (max-width: 580px) {
@@ -133,7 +146,9 @@ img {
     }
 
     .caption {
-        margin-right: 0px;
+        /* margin-right: 0px; */
+        display: flex;
+        justify-content: center;
     }
 
     img {
@@ -144,3 +159,104 @@ img {
 .hidden {
     display: none;
 }
+ 
+
+input[type="radio"] {
+    display: none;
+}
+
+/* move img */
+#mem1:checked~.slider .slide{ transform: translateX(0%);}
+#mem2:checked~.slider .slide{ transform: translateX(-100%);}
+#mem3:checked~.slider .slide{ transform: translateX(-200%);}
+#mem4:checked~.slider .slide{ transform: translateX(-300%);}
+#mem5:checked~.slider .slide{ transform: translateX(-400%);}
+#mem6:checked~.slider .slide{ transform: translateX(-500%);}
+#mem7:checked~.slider .slide{ transform: translateX(-600%);}
+#mem8:checked~.slider .slide{ transform: translateX(-700%);}
+#mem9:checked~.slider .slide{ transform: translateX(-800%);}
+
+/* move text */
+#mem1:checked~.addition .caption.cap1{ transform: translateX(0%);   }
+#mem2:checked~.addition .caption.cap2{ transform: translateX(-100%);}
+#mem3:checked~.addition .caption.cap3{ transform: translateX(-200%);}
+#mem4:checked~.addition .caption.cap4{ transform: translateX(-300%);}
+#mem5:checked~.addition .caption.cap5{ transform: translateX(-400%);}
+#mem6:checked~.addition .caption.cap6{ transform: translateX(-500%);}
+#mem7:checked~.addition .caption.cap7{ transform: translateX(-600%);}
+#mem8:checked~.addition .caption.cap8{ transform: translateX(-700%);}
+#mem9:checked~.addition .caption.cap9{ transform: translateX(-800%);}
+
+/* hover */
+#mem1:hover~.addition .controls .control.c1,
+#mem2:hover~.addition .controls .control.c2,
+#mem3:hover~.addition .controls .control.c3,
+#mem4:hover~.addition .controls .control.c4,
+#mem5:hover~.addition .controls .control.c5,
+#mem6:hover~.addition .controls .control.c6,
+#mem7:hover~.addition .controls .control.c7,
+#mem8:hover~.addition .controls .control.c8,
+#mem9:hover~.addition .controls .control.c9 {
+    background: rgb(255, 255, 255);
+}
+
+/* active */
+#mem1:checked~.addition .control.c1,
+#mem2:checked~.addition .control.c2,
+#mem3:checked~.addition .control.c3,
+#mem4:checked~.addition .control.c4,
+#mem5:checked~.addition .control.c5,
+#mem6:checked~.addition .control.c6,
+#mem7:checked~.addition .control.c7,
+#mem8:checked~.addition .control.c8,
+#mem9:checked~.addition .control.c9 {
+    background: none;
+    border: 2px solid rgb(0, 179, 255);
+    width: 13px;
+    height: 13px;
+}
+
+/* active hovered */
+#mem1:checked:hover~.addition .control.c1,
+#mem2:checked:hover~.addition .control.c2,
+#mem3:checked:hover~.addition .control.c3,
+#mem4:checked:hover~.addition .control.c4,
+#mem5:checked:hover~.addition .control.c5,
+#mem6:checked:hover~.addition .control.c6,
+#mem7:checked:hover~.addition .control.c7,
+#mem8:checked:hover~.addition .control.c8,
+#mem9:checked:hover~.addition .control.c9 {
+    border: 2px solid #fff;
+    background: none;
+}
+
+
+#mem1:checked~.addition .caption.cap1,
+#mem2:checked~.addition .caption.cap2,
+#mem3:checked~.addition .caption.cap3,
+#mem4:checked~.addition .caption.cap4,
+#mem5:checked~.addition .caption.cap5,
+#mem6:checked~.addition .caption.cap6,
+#mem7:checked~.addition .caption.cap7,
+#mem8:checked~.addition .caption.cap8,
+#mem9:checked~.addition .caption.cap9 {
+    opacity: 1;
+    visibility: visible;
+}
+ 
+
+.cap1,
+.cap2,
+.cap3,
+.cap4,
+.cap5,
+.cap6,
+.cap7,
+.cap8,
+.cap9 {
+    flex-basis: 100%;
+    flex-shrink: 0;
+    width: 100%;
+}
+ 
+/* endregion */
